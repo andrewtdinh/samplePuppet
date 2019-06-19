@@ -21,5 +21,12 @@ describe('on page load', () => {
       }
       userAgent: ''
     })
-  })
+
+    await page.goto('http://localhost:3000/');
+    const html = await page.$eval('.App-title', e => e.innerHTML);
+    expect(html).toBe('Welcome to React');
+    browser.close();
+  }, // This is not new
+  16000
+  ); // this is not new
 })
