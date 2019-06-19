@@ -11,7 +11,7 @@ const isDebugging = () => {
 
 describe('on page load', () => {
   test('h1 loads correctly', async() => {
-    let browser = await puppeteer.launch({})
+    let browser = await puppeteer.launch(isDebugging())
     let page = await browser.newPage()
     
     page.emulate({
